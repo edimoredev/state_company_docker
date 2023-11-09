@@ -7,17 +7,17 @@ RUN apk update \
   && apk add --no-cache gcc musl-dev postgresql-dev python3-dev libffi-dev \
   && pip install --upgrade pip
 
-RUN mkdir /stateCompany
+RUN mkdir /app
 
-WORKDIR /stateCompany
+WORKDIR /app
 
-COPY requirements.txt /stateCompany/
+COPY requirements.txt /app/
 
 # Install the dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the contents of the application to /stateCompany in the container
-COPY . /stateCompany/
+COPY . /app/
 
 
 # Define the command to run when the container starts
