@@ -46,7 +46,7 @@ $\color{red}{Nota:}$\
 #### PASO 4:
 *Ingresamos a la ruta donde esta el archivo docker-compose.yml y ejecutar el siguiente comando  docker-compose up --build*
   
-![image](https://github.com/edimoredev/state_company_docker/assets/125479887/565a13e6-fb6a-499a-822b-1e31967b66b4)
+![image](https://github.com/edimoredev/state_company_docker/assets/125479887/5469bf25-0940-448d-924f-9689e5acd5cc)
 #### PASO 5:
 *Ingresamos al docker desktop y vemos la imagen*
 
@@ -57,10 +57,28 @@ $\color{red}{Nota:}$\
 
 ![image](https://github.com/edimoredev/state_company_docker/assets/125479887/afb9bfd1-9886-4aba-b7ba-e0f30833120d)
 
-#### PASO 7:
+#### PASO 7 Test:
 *Realizamos un metodo POST del collect owner, property, propertyImage, propertyTrace con su respuesta*
 
-![image](https://github.com/edimoredev/state_company_docker/assets/125479887/a64f50fa-70b1-44f9-8ef7-d4fb78f54ecc)
+![image](https://github.com/edimoredev/state_company_docker/assets/125479887/c9adafc7-f679-44e9-8032-e0c5e9ce45c1)
+#### PASO 8:
+*Realizamos pruebas unitarias, en este caso pytest ejemplo owner para ello se realiza lo siguiente*
+
+1. En consola ejecutar el siguiente comando "docker-compose ps", saber los contenedores que estan ejecución
+   
+![image](https://github.com/edimoredev/state_company_docker/assets/125479887/35c2baa0-d738-47c8-acf7-712033cc70bb)
+2. luego "docker exec -it nombre del doker /bin/sh" --> docker exec -it app-app-1 /bin/sh, para saber si estamos en el repositorio 
+
+![image](https://github.com/edimoredev/state_company_docker/assets/125479887/581f9b8e-4de1-4c37-91b8-393afcd5080f)
+3. Ingresamos a test para realizar las pruebas
+
+![image](https://github.com/edimoredev/state_company_docker/assets/125479887/280807f5-a8a7-46f5-bc67-2a97d49f9879)
+4. se realiza la prueba ejemplo owner 
+![image](https://github.com/edimoredev/state_company_docker/assets/125479887/a44153c5-2b4c-410a-ad96-f1cba74293cb)
+
+
+
+
 
 ### *Agradecimientos a la empresa Million and Up*
 
