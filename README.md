@@ -1,7 +1,7 @@
-# stateCompany
+# stateCompanyDocker
 
 ## Introducción
-Este es uno de los dos proyectos realizados para esta prueba, sin la configuración docker compose.
+Este es uno de los dos proyectos realizados para esta prueba, con la configuración de docker compose.
 
 # Descripción Proyecto
 An enormous Real Estate company going to require create an API to get in information about 
@@ -22,6 +22,7 @@ c) Change Price
 - Nombre del Proyecto: stateCompany
   - Version FastApi: 0.104.1 
   - pymongo --> base de datos mongo 4.5.0
+  - Docker version 24.0.5
   - Archivo requirements.txt: Contenido de las librerias utilizadas
 
 $\color{red}{Nota:}$\
@@ -31,52 +32,52 @@ $\color{red}{Nota:}$\
 
 ## *Puesta en marcha del proyecto*
 #### PASO 1:
-*clonar el proyecto desde https://github.com/edimoredev/state_company*
+*clonar el proyecto desde https://github.com/edimoredev/state_company_docker*
 
-![image](https://github.com/edimoredev/state_company/assets/125479887/35bd4c4d-537d-42db-a8a4-3502fbfc3327)
+![image](https://github.com/edimoredev/state_company_docker/assets/125479887/6a87520c-e46d-4016-849b-6f44b72fd628)
 #### PASO 2:
-*crear el entorno virtual dentro de la carpeta state_company para python 3.11.5*
+*descargar y instalar docker compose desde https://docs.docker.com/desktop/install/windows-install/*
 
-![image](https://github.com/edimoredev/state_company/assets/125479887/f3facb02-f137-4a9f-8441-cafe8a48eeda)
+![image](https://github.com/edimoredev/state_company_docker/assets/125479887/8626b818-9b6d-452c-9334-f447825ba036)
 #### PASO 3:
-*Activar entorno virtual*
+*abrir docker desktop*
 
-![image](https://github.com/edimoredev/state_company/assets/125479887/7ab2d8d2-82a3-44ca-9210-0575be5fb1bf)
+![image](https://github.com/edimoredev/state_company_docker/assets/125479887/2bc97b13-170c-4e6a-8bc4-eb065e5d904c)
 #### PASO 4:
-*Ingresar a la carpeta cd .\backend\app\ y instalar el archivo requirements.txt*
-
-![image](https://github.com/edimoredev/state_company/assets/125479887/f37cf9a3-de8e-43bc-8193-0c6b6fb2620d)
+*Ingresamos a la ruta donde esta el archivo docker-compose.yml y ejecutar el siguiente comando  docker-compose up --build*
+  
+![image](https://github.com/edimoredev/state_company_docker/assets/125479887/5469bf25-0940-448d-924f-9689e5acd5cc)
 #### PASO 5:
-*Instalar MongoDb de manera local, descargando instalador https://www.mongodb.com/try/download/community 
-en CMD verificamos la version*
+*Ingresamos al docker desktop y vemos la imagen*
 
-![image](https://github.com/edimoredev/state_company/assets/125479887/5a79f52b-a42b-4052-a75f-a1d2c504a004)
+![image](https://github.com/edimoredev/state_company_docker/assets/125479887/c965b249-3561-4de6-8298-22979bc5648d)
+
 #### PASO 6:
-*Activamos MongoDB, con mongod*
-
-![image](https://github.com/edimoredev/state_company/assets/125479887/ad7f0a4c-6730-48e2-b774-f278e323a0ed)
-#### PASO 7:
-*En el proyecto ejecutamos el uvicorn main*
-
-![image](https://github.com/edimoredev/state_company/assets/125479887/5b09077b-ede1-49d9-b017-57c5822e9545)
-#### PASO 8:
 *Verificar en el navegador localhost url http://localhost:8000/docs SWAGER*
 
-![image](https://github.com/edimoredev/state_company/assets/125479887/4281fbd5-5c83-4e96-b36f-8b4b30544d77)
+![image](https://github.com/edimoredev/state_company_docker/assets/125479887/afb9bfd1-9886-4aba-b7ba-e0f30833120d)
 
-*API*
-![image](https://github.com/edimoredev/state_company/assets/125479887/3e251b83-0fff-453c-ad7c-445a746ec042)
-
-#### PASO 9:
+#### PASO 7 Test:
 *Realizamos un metodo POST del collect owner, property, propertyImage, propertyTrace con su respuesta*
 
+![image](https://github.com/edimoredev/state_company_docker/assets/125479887/c9adafc7-f679-44e9-8032-e0c5e9ce45c1)
+#### PASO 8:
+*Realizamos pruebas unitarias, en este caso pytest ejemplo owner para ello se realiza lo siguiente*
 
-![image](https://github.com/edimoredev/state_company/assets/125479887/923f812b-2c64-4a98-bd84-8b8ce4d21e73)
+1. En consola ejecutar el siguiente comando "docker-compose ps", saber los contenedores que estan ejecución
+   
+![image](https://github.com/edimoredev/state_company_docker/assets/125479887/35c2baa0-d738-47c8-acf7-712033cc70bb)
+2. luego "docker exec -it nombre del doker /bin/sh" --> docker exec -it app-app-1 /bin/sh, para saber si estamos en el repositorio 
 
-#### PASO 10:
-*Realizamos pruebas unitarias, en este caso pytest ejemplo owner*
+![image](https://github.com/edimoredev/state_company_docker/assets/125479887/581f9b8e-4de1-4c37-91b8-393afcd5080f)
+3. Ingresamos a test para realizar las pruebas
 
-![image](https://github.com/edimoredev/state_company/assets/125479887/f49cafb7-05b7-4b70-becd-6ef1529fe83b)
+![image](https://github.com/edimoredev/state_company_docker/assets/125479887/280807f5-a8a7-46f5-bc67-2a97d49f9879)
+4. se realiza la prueba ejemplo owner 
+![image](https://github.com/edimoredev/state_company_docker/assets/125479887/a44153c5-2b4c-410a-ad96-f1cba74293cb)
+
+
+
 
 
 ### *Agradecimientos a la empresa Million and Up*
